@@ -85,8 +85,7 @@ def grid():
 def attp1():
      x11, y11, x12, y12 = canvas.coords(p1)
      at11=canvas.create_rectangle(x11+500, y11, x12+500, y12, fill='red')
-     time.sleep(1)
-     canvas.delete(at11)
+     fenetre.after(1000, lambda : canvas.delete(at11))
 
 
 
