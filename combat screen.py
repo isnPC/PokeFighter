@@ -74,6 +74,7 @@ def grid(): #la grille de combat
     canvas.create_line(300, 0, 300,500,fill='grey')
     canvas.create_line(400, 0, 400,500,fill='grey')
     canvas.create_line(500, 0, 500,500,fill='grey')
+    canvas.create_line(600, 0, 600,500,fill='grey')
     canvas.create_line(700, 0, 700,500,fill='grey')
     canvas.create_line(800, 0, 800,500,fill='grey')
     canvas.create_line(900, 0, 900,500,fill='grey')
@@ -82,12 +83,16 @@ def grid(): #la grille de combat
 
 def att1p1():
     x11, y11, x12, y12 = canvas.coords(p1)
-    at11=canvas.create_rectangle(x11+600, y11, x12+600, y12, fill='red')
-    fenetre.after(750, lambda : canvas.delete(at11))
+    x21, y21, x22, y22 = canvas.coords(p2)
+    at5=canvas.create_rectangle(x11+600, y11, x12+600, y12, fill='red2')
+    dmg5=10
+    if abs(x11+600-x21) < 10 and abs(y11-y21) < 10:
+        fenetre.after(1, lambda : canvas.delete(at5))
 
 def att1p2():
     x21, y21, x22, y22 = canvas.coords(p2)
     at21=canvas.create_rectangle(x21-5, y21, 0, y22, fill='blue')
+    dmg2=20
     fenetre.after(625, lambda : canvas.delete(at21))
 
 
